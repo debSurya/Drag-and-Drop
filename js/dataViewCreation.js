@@ -4,13 +4,15 @@ var setTestType = function () {
     pageIndex = $(".setIndex").index(this);
     if (!pageIndex) {
         $(".manyToOne").show();
-        setTestElements($(".manyToOneTestContainer"), $(".manyToOneQuestionField"), "<div class='manyToOneAnswer'></div><br>", "<span class='manyToOneQuestion'></span>");
+        setTestElements($(".manyToOneTestContainer"), $(".manyToOneQuestionField"), "<div class='manyToOneAnswer' tabindex = '0'></div><br>", "<span class='manyToOneQuestion'></span>");
     } else if (pageIndex === 1) {
         $(".oneToMany").show();
-        setTestElements($(".oneToManyTestContainer"), $(".oneToManyQuestionField"), "<div class='oneToManyAnswer'></div><br>", "<span class='oneToManyQuestion'></span>");
+        setTestElements($(".oneToManyTestContainer"), $(".oneToManyQuestionField"), "<div class='oneToManyAnswer' tabindex = '0'></div><br>", "<span class='oneToManyQuestion'></span>");
     } else {
         $(".oneToOne").show();
         oneToOneData();
+        $(".mammal").attr("tabindex", 0).off("keydown").on("keydown", selectDraggable);
+        $(".properties").attr("tabindex", -1).off("keydown").on("keydown", dropDraggable);
         tempStore = [];
     }
     setDragAndDrop();
@@ -26,6 +28,8 @@ var setTestElements = function (parentToSelect, questionToSelect, answersToSelec
     selectQuestionSegment = questionSegmentToSelect;
     setQuestionField = selectQuestionSegment;
     dataViewPopulate();
+    $(".manyToOneAnswer, .oneToManyAnswer").off("keydown").on("keydown", selectDraggable);
+    $(".droppableTarget").off("keydown").on("keydown", dropDraggable);
 };
 
 //oneToMany Populate
@@ -113,6 +117,7 @@ var setDragAndDrop = function () {
         containment: "body"
     });
     $(".droppableTarget, .properties").droppable({
+        activeClass: "ui-state-hover",
         drop: onDrop
     });
 };
@@ -120,20 +125,17 @@ var setDragAndDrop = function () {
 //progress to next question
 var showNext = function () {
     if (!$(".nextQuestion").hasClass("endTest")) {
-        droppableTarget.removeClass("blankStyle");
         questionIndex++;
         $(".nextQuestion").attr("disabled", true);
         placeAnswer();
-        $(".manyToOneAnswer").draggable({
-            disabled: false
-        }).removeClass("placeAnswer");
         elementsToRemove = $(".manyToOneQuestion, .oneToManyQuestion, .manyToOneAnswer, .oneToManyAnswer, .checkAnswer, .nextQuestion, .droppableTarget, br")
         elementsToRemove.remove();
         setQuestionField = selectQuestionSegment, tempStore = [];
         dataViewPopulate();
         setDragAndDrop();
+        $(".manyToOneAnswer, .oneToManyAnswer").attr("tabindex", 0).off("keydown").on("keydown", selectDraggable);
+        $(".droppableTarget").attr("tabindex", -1).off("keydown").on("keydown", dropDraggable);
     } else {
-        alert("Thank You!");
         if (!pageIndex) {
             $(".manyToOne").hide();
         } else {

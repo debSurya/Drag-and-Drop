@@ -4,13 +4,15 @@
     <title>Simple test application using Drag and Drop</title>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/init.js"></script>
     <script src="js/dataViewCreation.js"></script>
     <script src="js/testFunctionalities.js"></script>
-    <intercept-url pattern="favicon.ico" access="permitAll" />
+    <script src="js/accessibilityFunctionalities.js"></script>
+    <intercept-url pattern="favicon.ico" access="permitAll"></intercept-url>
 </head>
 
 <body class="container-fluid">
@@ -19,15 +21,19 @@
             <p class="titleText">Kindergarten level test using drag and drop functionalities</p>
         </div>
     </header>
-    <section class="row initialPage">
+    <section class="initialPage">
         <br>
-        <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">Many To One</button>
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">Many To One</button>
+        </div>
         <br>
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To Many</button>
+        </div>
         <br>
-        <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To Many</button>
-        <br>
-        <br>
-        <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To One</button>
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To One</button>
+        </div>
     </section>
     <section class="manyToOne">
         <article class="manyToOneTestContainer">
@@ -45,10 +51,10 @@
     </section>
     <section class="oneToOne">
         <article class="col-xs-6 col-sm-6 col-md-6 col-lg-6 draggableMammals">
-            <div class="mammal"></div>
-            <div class="mammal"></div>
-            <div class="mammal"></div>
-            <div class="mammal"></div>
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
         </article>
         <article class="col-xs-6 col-sm-6 col-md-6 col-lg-6 droppableProperties">
             <div class="properties"></div>

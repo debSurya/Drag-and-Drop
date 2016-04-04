@@ -1,5 +1,6 @@
 var pageIndex, firstQuestionSegment, arrayLimit, selectDroppable, droppableTarget, answerLength, answerContent, questionLength, selectQuestion,
-    selectParent, manyToOneAnswers, oneToManyAnswers, questionData, noOfMammals, droppedMammal, testData, imageURL, divIterator, dataIterator, appendedDraggable, divToRevert, oneToOneOnDrop, oneToManyOnDrop, manyToOneOnDrop, oneToManyValidation, manyToOneValidation, oneToOneValidation,
+    selectParent, manyToOneAnswers, oneToManyAnswers, questionData, noOfMammals, droppedMammal, testData, imageURL, divIterator, dataIterator, draggableElement, appendedDraggable, divToRevert, oneToOneOnDrop, oneToManyOnDrop, manyToOneOnDrop, oneToManyValidation, manyToOneValidation, oneToOneValidation, buttonCode,
+    keyboardSelect = 0,
     questionIndex = 0,
     correctAnswer = [],
     blankChecker = 0,
@@ -21,4 +22,7 @@ $(document).ready(function () {
     $(".oneToOne").hide();
     $(".endTestSection").hide();
     $(".setIndex").off("click").on("click", setTestType);
+    $(document).mousemove(function () {
+        keyboardSelect = 0;
+    });
 });
