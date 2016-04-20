@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Simple test application using Drag and Drop</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/init.js"></script>
+    <script src="js/dataViewCreation.js"></script>
+    <script src="js/testFunctionalities.js"></script>
+    <script src="js/accessibilityFunctionalities.js"></script>
+    <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS" />
+</head>
+
+<body class="container-fluid">
+    <header class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pageTitle">
+            <p tabindex="0" class="titleText">Kindergarten level test using drag and drop functionalities</p>
+        </div>
+    </header>
+    <section class="initialPage">
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">Many To One</button>
+        </div>
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To Many</button>
+        </div>
+        <div class="row">
+            <button class="col-xs-3 col-sm-3 col-md-3 col-lg-3 btn btn-default setIndex">One To One</button>
+        </div>
+    </section>
+    <section class="manyToOne">
+        <article class="manyToOneTestContainer">
+            <div class="questionDiv" tabindex="0">
+                <div class="manyToOneQuestionField"></div>
+            </div>
+        </article>
+    </section>
+    <section class="oneToMany">
+        <article class="oneToManyTestContainer">
+            <div class="questionDiv" tabindex="0">
+                <div class="oneToManyQuestionField"></div>
+            </div>
+        </article>
+    </section>
+    <section class="oneToOne">
+        <div>
+            <label tabindex="0" class="oneToOneHeading">Match the following animals with their key features.</label>
+        </div>
+        <article class="col-xs-6 col-sm-6 col-md-6 col-lg-6 draggableMammals">
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
+            <div class="mammal" tabindex="0"></div>
+        </article>
+        <article class="col-xs-6 col-sm-6 col-md-6 col-lg-6 droppableProperties">
+            <div class="properties"></div>
+            <div class="properties"></div>
+            <div class="properties"></div>
+            <div class="properties"></div>
+        </article>
+    </section>
+    <section class="endTestSection">
+        <h2 tabindex="0" class="endText">THE TEST HAS BEEN COMPLETED.</h2>
+    </section>
+</body>
+
+</html>

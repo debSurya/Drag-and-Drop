@@ -1,0 +1,96 @@
+[
+    [
+        {
+            "noOfAns": 4,
+            "question": "The _ of the truck was stuck in the mud.",
+            "answer1": "door",
+            "answer2": "tire",
+            "answer3": "bell",
+            "answer4": "window",
+            "correct": ["tire"]
+    },
+        {
+            "noOfAns": 4,
+            "question": "Roses are red, violets are _.",
+            "answer1": "green",
+            "answer2": "yellow",
+            "answer3": "brown",
+            "answer4": "blue",
+            "correct": ["blue"]
+    },
+        {
+            "noOfAns": 3,
+            "question": "Twinkle twinkle little _. How I wonder what you are.",
+            "answer1": "car",
+            "answer2": "jar",
+            "answer3": "star",
+            "correct": ["star"]
+    }
+  ],
+  [
+        {
+            "noOfAns": 4,
+            "question": "BAA BAA _ sheep, have you any _? Yes _, yes _, three _ full.",
+            "answer1": "bags",
+            "answer2": "black",
+            "answer3": "sir",
+            "answer4": "wool",
+            "correct": ["black", "wool", "sir", "sir", "bags"]
+      },
+        {
+            "noOfAns": 4,
+            "question": "Humpty Dumpty sat on a _. Humpty Dumpty had a great _.",
+            "answer1": "tall",
+            "answer2": "fall",
+            "answer3": "wall",
+            "answer4": "mall",
+            "correct": ["wall", "fall"]
+      },
+        {
+            "noOfAns": 5,
+            "question": "The Itsy Bitsy _ crawled up the _ spout. _ came the _, and washed the _ out.",
+            "answer1": "water",
+            "answer2": "spider",
+            "answer3": "rain",
+            "answer4": "Down",
+            "answer5": "up",
+            "correct": ["spider", "water", "Down", "rain", "spider"]
+      }
+    ],
+    [
+        {
+            "mammals": [
+                "images/mammals/mammal1.jpg",
+                "images/mammals/mammal2.jpg",
+                "images/mammals/mammal3.jpg",
+                "images/mammals/mammal4.jpg"
+            ],
+            "properties": [
+                "images/properties/property1.jpg",
+                "images/properties/property2.jpg",
+                "images/properties/property3.jpg",
+                "images/properties/property4.jpg"
+            ],
+            "mammalsText": [
+                "rhino",
+                "elephant",
+                "flying squirrel",
+                "platypus"
+            ],
+            "propertiesText": [
+                "wings",
+                "horns",
+                "snout",
+                "eggs"
+            ]
+        },
+        {
+            "answers": [
+                "images/mammals/mammal3.jpg",
+                "images/mammals/mammal1.jpg",
+                "images/mammals/mammal2.jpg",
+                "images/mammals/mammal4.jpg"
+            ]
+        }
+    ]
+]
